@@ -1,0 +1,95 @@
+/* Rounded UI */
+
+:root{ --toolbarbutton-border-radius: 24px !important }
+#urlbar-input-container > box:hover,
+#urlbar-input-container > box[open],
+#main-menubar >  menu,
+.titlebar-button:hover,
+#scrollbutton-up,
+#scrollbutton-down,
+.tab-close-button,
+.close-icon > image,
+#page-action-buttons > :hover,
+.panel-arrowcontent,
+.urlbarView-row-inner,
+.search-one-offs button,
+.subviewbutton-back,
+.toolbaritem-combined-buttons > toolbarbutton,
+#PopupSearchAutoComplete,
+menupopup{ border-radius: 18px }
+
+button,
+.tab-background{ border-radius: 30px !important; }
+
+.panel-arrowcontent{ margin-inline-end: 0 !important; }
+.panel-arrow{ margin-inline: 17px !important; }
+
+menupopup{ -moz-appearance: none !important; overflow: -moz-hidden-unscrollable !important; }
+
+.tabbrowser-tab[selected]::after,
+.tabbrowser-tab[beforeselected-visible]::after{ border-color: transparent !important; }
+
+#nav-bar{ box-shadow: none !important; margin-top: 3px }
+.tab-line{ display: none }
+
+.tab-background[selected]{
+  border-top-width: 2px !important;
+  border-top-color: var(--lwt-tab-line-color) !important;
+}
+.tabbrowser-tab[selected]{ z-index: auto !important; }
+
+.urlbar-icon,
+toolbar toolbarbutton:not(#back-button):not(.bookmark-item):not(.titlebar-button) > .toolbarbutton-icon{  border-radius: 0px !important; clip-path: circle() }
+
+menugroup:hover > menuitem{ clip-path: circle() }
+
+/* Ribbon */
+
+.titlebar-button{ --uc-caption-background: var(--uc-caption-color) }
+
+.titlebar-button { opacity: 0.6; --uc-caption-color: rgb(252,185,15) }
+.titlebar-min    { opacity: 0.5; --uc-caption-color: rgb(36, 209, 49) }
+.titlebar-close  { opacity: 0.7; --uc-caption-color: rgb(250, 55, 55) }
+
+.titlebar-button:hover { opacity: 1 }
+
+.titlebar-button {
+  background: transparent !important;
+  padding-inline: 10px !important;
+  transition: opacity 0.2s ease;
+}
+.titlebar-close {	padding-right: 18px !important; }
+
+.titlebar-button > .toolbarbutton-icon {
+	list-style-image: none;
+	border-radius: 10px;
+  background: var(--uc-caption-background,currentColor) !important;
+}
+
+
+/* Autohide back button when disabled */
+#back-button, #forward-button {
+    transform: scale(1, 1) !important;
+    transition: margin-left 150ms var(--animation-easing-function), opacity 250ms var(--animation-easing-function), transform 350ms var(--animation-easing-function) !important;
+}
+
+#back-button[disabled="true"], #forward-button[disabled="true"] {
+    margin-left: -34px !important;
+    opacity: 0 !important;
+    transform: scale(0.8, 0.8) !important;
+    pointer-events: none !important;
+}
+
+/* Personal tweaks */
+
+#firefox-view-button, #home-button, #alltabs-button,#identity-icon-label {
+    display:none
+}
+
+html * {
+    font-family: JetBrainsMono NF
+}
+
+#urlbar-input-container {
+	color: #bd93f9;
+}
